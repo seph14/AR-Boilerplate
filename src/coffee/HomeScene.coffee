@@ -7,6 +7,7 @@ class HomeScene extends Scene
 	constructor:()->
 		w = 10
 		h = 10
+		###
 		for x in [0...w] by 1
 			for y in [0...h] by 1
 				geo = new THREE.BoxGeometry(10,10,10)
@@ -15,7 +16,7 @@ class HomeScene extends Scene
 				mesh.position.set( x-w/2, y-w/2, 0 ) 
 				mesh.position.multiplyScalar(10)
 				Stage3d.add(mesh)
-		
+		###
 		@loadScene1()
 		@loadScene2()
 		@loadScene3()

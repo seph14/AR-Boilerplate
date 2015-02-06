@@ -18,6 +18,7 @@ class Stage3d
 	@campos 	= {x:0, y:0, z:0}
 
 	@angle  	= 0
+	@radius 	= 2000
 	@mode 		= "free"
 
 	@init = (options)=>
@@ -68,11 +69,11 @@ class Stage3d
 		@stats.update()
 		#console.log(dt/1000)
 		@angle+= (dt/1000) * @umouse.x
-		radius = 1200+@umouse.x*800
+		@radius+= (1800+@umouse.x*1400-@radius)/10
 
-		@campos.y+=(@umouse.y*600-@campos.y)/10
+		@campos.y+=(@umouse.y*800-@campos.y)/20
 
-		@camera.position.set(radius * Math.cos(@angle),@campos.y,radius * Math.sin(@angle))
+		@camera.position.set(@radius * Math.cos(@angle),@campos.y,@radius * Math.sin(@angle))
 		@camera.lookAt(new THREE.Vector3())
 
 		Stage3d.renderer.render(@scene, @camera)

@@ -7,11 +7,13 @@ class Main extends Module
 	constructor:()->
 		super()
 		console.log('002')
+
+        
 		geometry = new THREE.SphereGeometry(7,10,10)
 		material = new THREE.MeshBasicMaterial({color:0x00FF00,wireframe:true})
 		@mesh = new THREE.Mesh(geometry,material)
-		Stage3d.add(@mesh)
-
+		#Stage3d.add(@mesh)
+        
 
 
 		(new THREE.OBJLoader()).load('models/Voronoitest18_LowpolyBake.obj', ( object ) ->
@@ -30,13 +32,18 @@ class Main extends Module
             Stage3d.add(object)
 
             clone = object.clone()
-            clone.position.y=300
-            clone.rotation.y=175
+            clone.position.y=200
+            clone.rotation.y=90
             Stage3d.add(clone)
 
             clone = object.clone()
-            clone.position.y=-300
-            clone.rotation.y=-227
+            clone.position.y=-200
+            clone.rotation.y=180
+            Stage3d.add(clone)
+
+            clone = object.clone()
+            clone.position.y=-400
+            clone.rotation.y=270
             Stage3d.add(clone)
 
         )
@@ -44,7 +51,7 @@ class Main extends Module
 		return
 
 	update:(dt)->
-		@mesh.rotation.z += 0.01
+		#@mesh.rotation.z += 0.01
 		return
 
 	@testModule()
