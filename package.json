@@ -41,6 +41,7 @@
     "gulp-rev": "*",
     "gulp-rev-collector": "*",
     "gulp-sourcemaps": "*",
+    "gulp-sprite-generator": "^0.2.3",
     "gulp-stylus": "*",
     "gulp-uglify": "*",
     "gulp-util": "*",
@@ -56,5 +57,10 @@
     "webpack": "*",
     "webpack-dev-server": "*",
     "yargs": "*"
+  },
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "gulp-stylus": "^2.0.0",
+    "gulp.spritesmith": "^2.5.0"
   }
 }

@@ -6,8 +6,8 @@ class Main extends Module
 	constructor:()->
 		super()
 		console.log('003')
-		geometry = new THREE.SphereGeometry(2,8,8)
-		material = new THREE.MeshBasicMaterial({color:0x0000FF,wireframe:true})
+		geometry = new THREE.SphereGeometry(200,800,800)
+		material = new THREE.MeshBasicMaterial({color:0x003333,wireframe:true})
 		@mesh = new THREE.Mesh(geometry,material)
 		Stage3d.add(@mesh)
 		return
