@@ -28,21 +28,8 @@ class Main extends Module
 				cubes.push(mesh)
 				Stage3d.add(mesh)
 
-		materials = [
-		    new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('textures/skybox/px.jpg') } )
-			new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('textures/skybox/nx.jpg') } )
-			new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('textures/skybox/py.jpg') } )
-			new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('textures/skybox/ny.jpg') } )
-			new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('textures/skybox/pz.jpg') } )
-			new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('textures/skybox/nz.jpg') } )
-		]
-		@skybox = new THREE.Mesh(
-		    new THREE.BoxGeometry(10000, 10000, 10000),
-		    new THREE.MeshFaceMaterial(materials)
-		)
-		@skybox.scale.x = - 1;
-		# @skybox.position.y = -3000
-		Stage3d.add(@skybox)
+		
+		Stage3d.add(MaterialFactory.createSkybox('textures/skybox'))
 
 
 		return

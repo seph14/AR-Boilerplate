@@ -25,6 +25,8 @@ class Main
 		mouse.y = e.pageY;
 		Stage3d.mouse.x = e.pageX;
 		Stage3d.mouse.y = e.pageY;
+		Stage3d.umouse.x = (e.pageX/window.innerWidth-0.5)*2;
+		Stage3d.umouse.y = (e.pageY/window.innerHeight-0.5)*2;
 
 		#console.log(mouse)
 		return

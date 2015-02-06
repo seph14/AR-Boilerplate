@@ -24,18 +24,19 @@ class Main extends Module
 					#node.geometry.computeVertexNormals()
                     node.receiveShadow = true
                     node.material = MaterialFactory.getMeshBasicMaterial()
+                    node.material = MaterialFactory.getMeshNormalMaterial()
             )
 
             Stage3d.add(object)
 
             clone = object.clone()
-            clone.position.y=200
-            clone.rotation.y=75
+            clone.position.y=300
+            clone.rotation.y=175
             Stage3d.add(clone)
 
             clone = object.clone()
-            clone.position.y=-200
-            clone.rotation.y=-127
+            clone.position.y=-300
+            clone.rotation.y=-227
             Stage3d.add(clone)
 
         )
