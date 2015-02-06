@@ -9,13 +9,11 @@ class Main extends Module
 		console.log('002')
 
         
-		geometry = new THREE.SphereGeometry(7,10,10)
-		material = new THREE.MeshBasicMaterial({color:0x00FF00,wireframe:true})
+		geometry = new THREE.SphereGeometry(7,200,200)
+		material = new THREE.MeshBasicMaterial({color:0xe5e5bd,wireframe:false})
 		@mesh = new THREE.Mesh(geometry,material)
-		#Stage3d.add(@mesh)
+		Stage3d.add(@mesh)
         
-
-
 		(new THREE.OBJLoader()).load('models/Voronoitest18_LowpolyBake.obj', ( object ) ->
             object.recieveShadow = true
             object.traverse( ( node ) ->
@@ -31,6 +29,7 @@ class Main extends Module
 
             Stage3d.add(object)
 
+            ###
             clone = object.clone()
             clone.position.y=200
             clone.rotation.y=90
@@ -45,6 +44,7 @@ class Main extends Module
             clone.position.y=-400
             clone.rotation.y=270
             Stage3d.add(clone)
+            ###
 
         )
 

@@ -15,3 +15,7 @@ gulp.task('watchJade',function(){
 gulp.task('watchCoffee',function(){
 	gulp.watch( path.coffee+'**/*.coffee', ['webpack',browserSync.reload]);
 })
+
+gulp.task( 'watchSprite', function() {
+	gulp.watch( path.sprite+'**/*.png', ['sprite']);
+} );
