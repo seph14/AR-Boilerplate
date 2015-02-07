@@ -15,19 +15,19 @@ class Main extends Module
 		Stage3d.add(@mesh)
 
 
-		###
-			w = 10
-			h = 10
-			for x in [0...w] by 2
-				for y in [0...h] by 2
-					geo = new THREE.BoxGeometry(2,2,2)
-					material = new THREE.MeshBasicMaterial({color:0x00ffff,wireframe:false})
-					mesh = new THREE.Mesh(geo,material)
-					mesh.position.set( x-w/2, y-w/2, 0 ) 
-					mesh.position.multiplyScalar(10)
-					cubes.push(mesh)
-					Stage3d.add(mesh)
-		###
+		
+		w = 10
+		h = 10
+		for x in [0...w] by 2
+			for y in [0...h] by 2
+				geo = new THREE.BoxGeometry(2,2,2)
+				material = new THREE.MeshBasicMaterial({color:0x00ffff,wireframe:false})
+				mesh = new THREE.Mesh(geo,material)
+				mesh.position.set( x-w/2, y-w/2, 0 ) 
+				mesh.position.multiplyScalar(10)
+				cubes.push(mesh)
+				Stage3d.add(mesh)
+		
 		
 		Stage3d.add(MaterialFactory.createSkybox('textures/skybox'))
 
