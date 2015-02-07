@@ -11,7 +11,7 @@ class MaterialFactory
 		return new THREE.MeshBasicMaterial({color:0xffffff,wireframe:true,transparent: true, opacity: .01, blending: THREE.AdditiveBlending})
 
 	@getMeshBasicMaterial: () ->
-		return new THREE.MeshBasicMaterial({color:0x111111,wireframe:true})
+		return new THREE.MeshBasicMaterial({color:0x111111,wireframe:false,transparent: true, opacity: .75, blending: THREE.AdditiveBlending})
 
 	@getMeshNormalMaterial: () ->
 		return new THREE.MeshNormalMaterial({wireframe:false})
