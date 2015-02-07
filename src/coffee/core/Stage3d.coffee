@@ -14,12 +14,11 @@ class Stage3d
 	@isInit		= false
 
 	@mouse 		= {x:0, y:0}
-	@umouse 	= {x:0, y:0}
+	@umouse 	= {x:.5, y:.5}
 	@campos 	= {x:0, y:0, z:0}
 
 	@angle  	= 0
 	@radius 	= 2000
-	@mode 		= "free"
 
 	@init = (options)=>
 
@@ -33,7 +32,7 @@ class Stage3d
 		@camera.position.z = 100
 
 		@scene = new THREE.Scene()
-		@scene.add( new THREE.AmbientLight(color:0xFFFFFF) )
+		@scene.add( new THREE.AmbientLight(color:0xFFFF00) )
 
 		transparent = options.transparent||false
 		antialias = options.antialias||false
@@ -43,7 +42,7 @@ class Stage3d
 
 		document.body.appendChild(@renderer.domElement)
 
-		@setUpStats()
+		#@setUpStats()
 
 		return
 
@@ -66,7 +65,7 @@ class Stage3d
 
 	@render = (dt)=>
 
-		@stats.update()
+		#@stats.update()
 		#console.log(dt/1000)
 		@angle+= (dt/1000) * @umouse.x
 		@radius+= (1800+@umouse.x*1400-@radius)/10
@@ -86,11 +85,11 @@ class Stage3d
 			@camera.updateProjectionMatrix()
 			@renderer.setSize( window.innerWidth, window.innerHeight )
 		return
-
+	###
 	@setUpStats: () ->
         @stats = new Stats()
         @stats.domElement.style.position = 'absolute'
         @stats.domElement.style.top = '0px'
         @stats.domElement.style.zIndex = 1002
-
+	###
 module.exports = Stage3d

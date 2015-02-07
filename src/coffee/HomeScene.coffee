@@ -5,9 +5,11 @@ Stage3d 		= require('./core/Stage3d')
 class HomeScene extends Scene
 
 	constructor:()->
+
+		###
 		w = 10
 		h = 10
-		###
+		
 		for x in [0...w] by 1
 			for y in [0...h] by 1
 				geo = new THREE.BoxGeometry(10,10,10)

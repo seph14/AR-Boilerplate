@@ -12,6 +12,7 @@ class Main
 	@init = ()->
 		StageRenderer.onUpdate.add(SceneTraveler.update)
 		StageRenderer.onResize.add(SceneTraveler.resize)
+		StageRenderer.onResize.add(Stage3d.resize)
 		SceneTraveler.to(new HomeScene())
 		return
 

@@ -8,15 +8,12 @@ class Main extends Module
         super()
         console.log('002 LargeThing')
 
-        
-        geometry = new THREE.SphereGeometry(7,200,200)
-        material = new THREE.MeshBasicMaterial({color:0xe5e5bd,wireframe:false})
-        @mesh = new THREE.Mesh(geometry,material)
-        Stage3d.add(@mesh)
+        if true
 
-        if false
-
-            (new THREE.OBJLoader()).load('models/Voronoitest18_LowpolyBake.obj', ( object ) ->
+            #url = 'models/terrainA.obj'
+            url = 'models/Voronoitest18_LowpolyBake.obj'
+            
+            (new THREE.OBJLoader()).load(url, ( object ) ->
                 object.recieveShadow = true
                 object.traverse( ( node ) ->
                     if node instanceof THREE.Mesh
