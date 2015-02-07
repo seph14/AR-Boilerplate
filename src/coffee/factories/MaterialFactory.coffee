@@ -7,6 +7,9 @@ class MaterialFactory
 		@isInit = true
 	# @init()
 
+	@getGridMaterial: () ->
+		return new THREE.MeshBasicMaterial({color:0xffffff,wireframe:true,transparent: true, opacity: .01, blending: THREE.AdditiveBlending})
+
 	@getMeshBasicMaterial: () ->
 		return new THREE.MeshBasicMaterial({color:0x111111,wireframe:true})
 
