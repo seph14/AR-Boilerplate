@@ -4,7 +4,7 @@ MaterialFactory = require('factories/MaterialFactory')
 
 class Main extends Module
 
-	#@cubes = []
+	@cubes = []
 
 	constructor:()->
 		super()

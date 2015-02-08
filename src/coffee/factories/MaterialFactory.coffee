@@ -1,6 +1,21 @@
 class MaterialFactory 
 
 	constructor:()->
+
+		console.log('MaterialFactory.constructor')
+		dispTexture = THREE.ImageUtils.loadTexture( "srtm_512x256_norm2.png" );
+    
+		shader = THREE.ShaderLib[ "normalmap" ];
+		uniforms = THREE.UniformsUtils.clone( shader.uniforms );
+
+		uniforms[ "tNormal" ].value = THREE.ImageUtils.loadTexture( "flat.png" );
+
+		@material = new THREE.ShaderMaterial( {
+	            uniforms: uniforms,
+	            vertexShader: shader.vertexShader,
+	            fragmentShader: shader.fragmentShader,
+	            lights: true} )
+
 		return
 
 	@init:()->
@@ -9,6 +24,9 @@ class MaterialFactory
 
 	@getGridMaterial: () ->
 		return new THREE.MeshBasicMaterial({color:0xffffff,wireframe:true,transparent: true, opacity: .01, blending: THREE.AdditiveBlending})
+
+	@getTestMaterial: () ->
+		return @material
 
 	@getMeshBasicMaterial: () ->
 		return new THREE.MeshBasicMaterial({color:0x111111,wireframe:false,transparent: true, opacity: .75, blending: THREE.AdditiveBlending})
