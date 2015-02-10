@@ -1,6 +1,10 @@
 class MaterialFactory 
+<<<<<<< HEAD
 	globalMaterial = {}
 	
+=======
+
+>>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 	constructor:()->
 
 		console.log('MaterialFactory.constructor')
@@ -23,6 +27,7 @@ class MaterialFactory
 		@isInit = true
 	# @init()
 
+<<<<<<< HEAD
 	@getMaterial: (name, useGlobal) ->
 		if name == undefined or name == null 
 			console.log "Name of material is undefined, use createMaterialWithShader instead"
@@ -166,6 +171,8 @@ class MaterialFactory
 		globalMaterial[matName] = mat
 		return mat
 
+=======
+>>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 	@getGridMaterial: () ->
 		return new THREE.MeshBasicMaterial({color:0xffffff,wireframe:true,transparent: true, opacity: .01, blending: THREE.AdditiveBlending})
 
@@ -178,6 +185,7 @@ class MaterialFactory
 	@getMeshNormalMaterial: () ->
 		return new THREE.MeshNormalMaterial({wireframe:false})
 
+<<<<<<< HEAD
 	@getMeshLambertMaterial: () ->
 		#return new THREE.MeshNormalMaterial({wireframe:false})
 
@@ -214,6 +222,16 @@ class MaterialFactory
 			new THREE.MeshBasicMaterial( { fog: false, map: THREE.ImageUtils.loadTexture(suff+'/ny.jpg') } )
 			new THREE.MeshBasicMaterial( { fog: false, map: THREE.ImageUtils.loadTexture(suff+'/pz.jpg') } )
 			new THREE.MeshBasicMaterial( { fog: false, map: THREE.ImageUtils.loadTexture(suff+'/nz.jpg') } )
+=======
+	@createSkybox: (suff) ->
+		materials = [
+		    new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture(suff+'/px.jpg') } )
+			new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture(suff+'/nx.jpg') } )
+			new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture(suff+'/py.jpg') } )
+			new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture(suff+'/ny.jpg') } )
+			new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture(suff+'/pz.jpg') } )
+			new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture(suff+'/nz.jpg') } )
+>>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 		]
 		skybox = new THREE.Mesh(
 		    new THREE.BoxGeometry(10000, 10000, 10000),
