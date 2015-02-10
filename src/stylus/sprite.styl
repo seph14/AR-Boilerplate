@@ -1,0 +1,166 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$256_name = '256';
+$256_x = 0px;
+$256_y = 327px;
+$256_offset_x = 0px;
+$256_offset_y = -327px;
+$256_width = 128px;
+$256_height = 128px;
+$256_total_width = 674px;
+$256_total_height = 455px;
+$256_image = '../images/sprite.png';
+$256 = 0px 327px 0px -327px 128px 128px 674px 455px '../images/sprite.png' '256';
+$Arrow-Left_name = 'Arrow-Left';
+$Arrow-Left_x = 128px;
+$Arrow-Left_y = 327px;
+$Arrow-Left_offset_x = -128px;
+$Arrow-Left_offset_y = -327px;
+$Arrow-Left_width = 48px;
+$Arrow-Left_height = 48px;
+$Arrow-Left_total_width = 674px;
+$Arrow-Left_total_height = 455px;
+$Arrow-Left_image = '../images/sprite.png';
+$Arrow-Left = 128px 327px -128px -327px 48px 48px 674px 455px '../images/sprite.png' 'Arrow-Left';
+$Arrow-Right_name = 'Arrow-Right';
+$Arrow-Right_x = 176px;
+$Arrow-Right_y = 327px;
+$Arrow-Right_offset_x = -176px;
+$Arrow-Right_offset_y = -327px;
+$Arrow-Right_width = 48px;
+$Arrow-Right_height = 48px;
+$Arrow-Right_total_width = 674px;
+$Arrow-Right_total_height = 455px;
+$Arrow-Right_image = '../images/sprite.png';
+$Arrow-Right = 176px 327px -176px -327px 48px 48px 674px 455px '../images/sprite.png' 'Arrow-Right';
+$close_name = 'close';
+$close_x = 437px;
+$close_y = 0px;
+$close_offset_x = -437px;
+$close_offset_y = 0px;
+$close_width = 24px;
+$close_height = 24px;
+$close_total_width = 674px;
+$close_total_height = 455px;
+$close_image = '../images/sprite.png';
+$close = 437px 0px -437px 0px 24px 24px 674px 455px '../images/sprite.png' 'close';
+$head_genesis_name = 'head_genesis';
+$head_genesis_x = 0px;
+$head_genesis_y = 0px;
+$head_genesis_offset_x = 0px;
+$head_genesis_offset_y = 0px;
+$head_genesis_width = 437px;
+$head_genesis_height = 179px;
+$head_genesis_total_width = 674px;
+$head_genesis_total_height = 455px;
+$head_genesis_image = '../images/sprite.png';
+$head_genesis = 0px 0px 0px 0px 437px 179px 674px 455px '../images/sprite.png' 'head_genesis';
+$head_large_name = 'head_large';
+$head_large_x = 224px;
+$head_large_y = 327px;
+$head_large_offset_x = -224px;
+$head_large_offset_y = -327px;
+$head_large_width = 450px;
+$head_large_height = 38px;
+$head_large_total_width = 674px;
+$head_large_total_height = 455px;
+$head_large_image = '../images/sprite.png';
+$head_large = 224px 327px -224px -327px 450px 38px 674px 455px '../images/sprite.png' 'head_large';
+$head_orpheus_name = 'head_orpheus';
+$head_orpheus_x = 0px;
+$head_orpheus_y = 179px;
+$head_orpheus_offset_x = 0px;
+$head_orpheus_offset_y = -179px;
+$head_orpheus_width = 437px;
+$head_orpheus_height = 148px;
+$head_orpheus_total_width = 674px;
+$head_orpheus_total_height = 455px;
+$head_orpheus_image = '../images/sprite.png';
+$head_orpheus = 0px 179px 0px -179px 437px 148px 674px 455px '../images/sprite.png' 'head_orpheus';
+$logo_name = 'logo';
+$logo_x = 437px;
+$logo_y = 24px;
+$logo_offset_x = -437px;
+$logo_offset_y = -24px;
+$logo_width = 119px;
+$logo_height = 13px;
+$logo_total_width = 674px;
+$logo_total_height = 455px;
+$logo_image = '../images/sprite.png';
+$logo = 437px 24px -437px -24px 119px 13px 674px 455px '../images/sprite.png' 'logo';
+$social_name = 'social';
+$social_x = 128px;
+$social_y = 375px;
+$social_offset_x = -128px;
+$social_offset_y = -375px;
+$social_width = 146px;
+$social_height = 48px;
+$social_total_width = 674px;
+$social_total_height = 455px;
+$social_image = '../images/sprite.png';
+$social = 128px 375px -128px -375px 146px 48px 674px 455px '../images/sprite.png' 'social';
+$spritesheet_width = 674px;
+$spritesheet_height = 455px;
+$spritesheet_image = '../images/sprite.png';
+$spritesheet_sprites = $256 $Arrow-Left $Arrow-Right $close $head_genesis $head_large $head_orpheus $logo $social;
+$spritesheet = 674px 455px '../images/sprite.png' $spritesheet_sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}

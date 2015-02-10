@@ -1,0 +1,66 @@
+{
+  "name": "gulp-template",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Makio64/Template",
+  "license": "MIT",
+  "authors": [
+    "david.ronai <david.ronai@gmail.com>"
+  ],
+  "keywords": [
+    "boilerplate",
+    "starter",
+    "gulp",
+    "stylus",
+    "jade",
+    "coffee",
+    "template",
+    "webpack"
+  ],
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  },
+  "devDependencies": {
+    "browser-sync": "*",
+    "coffee-loader": "*",
+    "coffee-script": "*",
+    "del": "*",
+    "gulp": "^3.8.10",
+    "gulp-coffee": "*",
+    "gulp-concat": "*",
+    "gulp-copy": "*",
+    "gulp-cssmin": "*",
+    "gulp-data": "*",
+    "gulp-imagemin": "*",
+    "gulp-jade": "*",
+    "gulp-minify-css": "*",
+    "gulp-minify-html": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-rev": "*",
+    "gulp-rev-collector": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-sprite-generator": "^0.2.3",
+    "gulp-stylus": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp-watch": "*",
+    "gulp-webpack": "*",
+    "jade": "*",
+    "nib": "*",
+    "run-sequence": "*",
+    "signals": "*",
+    "stylus": "*",
+    "vinyl-buffer": "*",
+    "vinyl-source-stream": "*",
+    "webpack": "*",
+    "webpack-dev-server": "*",
+    "yargs": "*"
+  },
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "gulp-stylus": "^2.0.0",
+    "gulp.spritesmith": "^2.5.0"
+  }
+}
