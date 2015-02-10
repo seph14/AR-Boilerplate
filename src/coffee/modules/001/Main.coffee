@@ -23,7 +23,6 @@ class Main extends Module
 		t = 8
 		s = 10
 
-<<<<<<< HEAD
 		material = MaterialFactory.getGridMaterial()
 
 		if true
@@ -36,18 +35,6 @@ class Main extends Module
 						mesh.position.multiplyScalar(s)
 						#@cubes.push(mesh)
 						Stage3d.add(mesh)
-=======
-		for x in [0...w] by t
-			for y in [0...h] by t
-				for z in [0...d] by t
-					geo = new THREE.BoxGeometry(t*s-1,t*s-1,t*s-1)
-					material = MaterialFactory.getGridMaterial()
-					mesh = new THREE.Mesh(geo,material)
-					mesh.position.set( x-w/2, y-h/2, z-d/2 ) 
-					mesh.position.multiplyScalar(s)
-					#@cubes.push(mesh)
-					Stage3d.add(mesh)
->>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 		
 		
 		Stage3d.add(MaterialFactory.createSkybox('textures/skybox'))

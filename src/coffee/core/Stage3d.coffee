@@ -20,12 +20,9 @@ class Stage3d
 	@angle  	= 0
 	@radius 	= 2000
 
-<<<<<<< HEAD
 	rendererStats = null
 	stats = null
 
-=======
->>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 	@init = (options)=>
 
 		if(@isInit)
@@ -34,22 +31,15 @@ class Stage3d
 		w = window.innerWidth
 		h = window.innerHeight
 
-<<<<<<< HEAD
 		@camera = new THREE.PerspectiveCamera( 40, w / h, 1, 50000 )
-=======
-		@camera = new THREE.PerspectiveCamera( 40, w / h, 1, 20000 )
->>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 		@camera.position.z = 100
 
 		@scene = new THREE.Scene()
 		@scene.add( new THREE.AmbientLight(color:0xFFFF00) )
 
-<<<<<<< HEAD
 		@scene.fog = new THREE.Fog(0x000000, 200, 2800)
 		#@scene.fog.color.setHSL( 0.51, 0.6, 0.6 )
 
-=======
->>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 		transparent = options.transparent||false
 		antialias = options.antialias||false
 
@@ -58,7 +48,6 @@ class Stage3d
 
 		document.body.appendChild(@renderer.domElement)
 
-<<<<<<< HEAD
 		rendererStats	= new THREEx.RendererStats()
 		rendererStats.domElement.style.position	= 'absolute'
 		rendererStats.domElement.style.right	= '0px'
@@ -70,9 +59,6 @@ class Stage3d
 		stats.domElement.style.right	= '0px'
 		stats.domElement.style.top	= '4px'
 		document.body.appendChild( stats.domElement )
-=======
-		#@setUpStats()
->>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 
 		return
 
@@ -95,14 +81,8 @@ class Stage3d
 
 	@render = (dt)=>
 
-<<<<<<< HEAD
 		#@angle+= (dt/1000) * (@umouse.x) *.2
 		@angle+= (@umouse.x * Math.PI - @angle)/15
-=======
-		#@stats.update()
-		#console.log(dt/1000)
-		@angle+= (dt/1000) * @umouse.x
->>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 		@radius+= (1800+@umouse.x*1400-@radius)/10
 
 		@campos.y+=(@umouse.y*800-@campos.y)/20
@@ -111,12 +91,9 @@ class Stage3d
 		@camera.lookAt(new THREE.Vector3())
 
 		Stage3d.renderer.render(@scene, @camera)
-<<<<<<< HEAD
 
 		rendererStats.update(@renderer);
 		stats.update();
-=======
->>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 		return
 
 
@@ -126,15 +103,5 @@ class Stage3d
 			@camera.updateProjectionMatrix()
 			@renderer.setSize( window.innerWidth, window.innerHeight )
 		return
-<<<<<<< HEAD
 
-=======
-	###
-	@setUpStats: () ->
-        @stats = new Stats()
-        @stats.domElement.style.position = 'absolute'
-        @stats.domElement.style.top = '0px'
-        @stats.domElement.style.zIndex = 1002
-	###
->>>>>>> 49c0ca6dd7e303561e81924c5bff2178fa3b9179
 module.exports = Stage3d
